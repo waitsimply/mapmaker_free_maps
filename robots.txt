@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://yourusername.github.io/mapmaker_free_maps/sitemap.xml
+Sitemap: https://waitsimply.github.io/mapmaker_free_maps/sitemap.xml
 
 # Allow indexing of all map images
 Allow: /maps/
