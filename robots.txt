@@ -1,0 +1,14 @@
+# Robots.txt for Free Maps Repository
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourusername.github.io/mapmaker_free_maps/sitemap.xml
+
+# Allow indexing of all map images
+Allow: /maps/
+
+# Disallow temporary or draft files
+Disallow: /drafts/
+Disallow: /work-in-progress/

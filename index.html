@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free high-quality maps for teachers, educators, journalists, and students. Download world maps, political maps, physical maps, and more. Created with mapmaker.io">
+    <meta name="keywords" content="free maps, educational maps, teacher resources, classroom maps, journalist maps, world map, political map, geography resources">
+    <meta name="author" content="mapmaker.io">
+
+    <meta property="og:title" content="Free Maps for Teachers and Journalists">
+    <meta property="og:description" content="High-quality, free map images for educational and journalistic use">
+    <meta property="og:type" content="website">
+
+    <title>Free Maps for Teachers and Journalists | Educational Map Resources</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {          
+            --md-sys-color-primary: #1A73E8; 
+            --md-sys-color-on-primary: #ffffff;   
+            --md-sys-color-secondary-container: #D2E3FC; 
+            --md-sys-color-on-secondary-container: #174EA6;   
+            --md-sys-color-surface: #F8F9FA;           
+            --md-sys-color-surface-variant: #E8EAED;   
+            --md-sys-color-on-surface: #202124; 
+            --md-sys-color-outline: #5F6368;
+            --shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.5;
+            padding-bottom: 5rem;
+        }
+
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+            background-color: var(--md-sys-color-surface-variant);
+            border-radius: 0 0 28px 28px;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--md-sys-color-on-surface);
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--md-sys-color-outline);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .map-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-1);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--md-sys-color-primary);
+        }
+
+        .map-group {
+            margin-bottom: 2.5rem;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: var(--md-sys-color-outline);
+            margin-bottom: 1rem;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .map-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-surface-variant);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+            transition: all 0.2s ease;
+        }
+
+        .map-link:hover {
+            background-color: var(--md-sys-color-secondary-container);
+            box-shadow: var(--shadow-2);
+            transform: translateY(-2px);
+        }
+
+        .map-link span {
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .format-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background-color: var(--md-sys-color-primary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--md-sys-color-surface-variant);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--md-sys-color-outline);
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .map-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Free Maps for Teachers</h1>
+        <p>High-quality, free map images designed for classroom, journalism, and educational use.</p>
+        <div class="attribution" style="margin-top: 1.5rem; font-size: 0.85rem;">
+            Created with <a href="https://mapmaker.io" target="_blank" style="color: var(--md-sys-color-primary); font-weight: 700; text-decoration: none;">mapmaker.io</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <center>
+            <div class="stats-badge">
+                <span id="mapCount">18</span>&nbsp;Maps available for download
+            </div>
+        </center>
+
+        <div class="map-card">
+            <h2>USA Collections</h2>
+
+            <div class="map-group">
+                <h3>Blank Maps (Outline Only)</h3>
+                <div class="link-grid">
+                    <a href="maps/usa_states_blank_2000w.png" class="map-link" download>
+                        <span>USA States Blank - 2000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_blank_2000w.svg" class="map-link" download>
+                        <span>USA States Blank - 2000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_blank_4000w.png" class="map-link" download>
+                        <span>USA States Blank - 4000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_blank_4000w.svg" class="map-link" download>
+                        <span>USA States Blank - 4000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_blank_print-letter.png" class="map-link" download>
+                        <span>Letter Size Print Outlines</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_blank_print-letter.svg" class="map-link" download>
+                        <span>Letter Size Print Outlines</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-group">
+                <h3>Colored Maps (Thematic)</h3>
+                <div class="link-grid">
+                    <a href="maps/usa_states_colored_2000w.png" class="map-link" download>
+                        <span>USA States Colored - 2000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_colored_2000w.svg" class="map-link" download>
+                        <span>USA States Colored - 2000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_colored_4000w.png" class="map-link" download>
+                        <span>USA States Colored - 4000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_colored_4000w.svg" class="map-link" download>
+                        <span>USA States Colored - 4000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_colored_print-letter.png" class="map-link" download>
+                        <span>Letter Size Colored Print</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_colored_print-letter.svg" class="map-link" download>
+                        <span>Letter Size Colored Print</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-group">
+                <h3>Labeled Maps (Reference)</h3>
+                <div class="link-grid">
+                    <a href="maps/usa_states_labeled_2000w.png" class="map-link" download>
+                        <span>USA States Labeled - 2000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_labeled_2000w.svg" class="map-link" download>
+                        <span>USA States Labeled - 2000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_labeled_4000w.png" class="map-link" download>
+                        <span>USA States Labeled - 4000px</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_labeled_4000w.svg" class="map-link" download>
+                        <span>USA States Labeled - 4000px</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                    <a href="maps/usa_states_labeled_print-letter.png" class="map-link" download>
+                        <span>Letter Size Labeled Print</span>
+                        <span class="format-badge">PNG</span>
+                    </a>
+                    <a href="maps/usa_states_labeled_print-letter.svg" class="map-link" download>
+                        <span>Letter Size Labeled Print</span>
+                        <span class="format-badge">SVG</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>All maps created with <a href="https://mapmaker.io" target="_blank">mapmaker.io</a></p>
+        <p>Free for educational and journalistic use</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com" target="_blank">View on GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>

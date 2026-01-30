@@ -1,0 +1,31 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.bak
+*.cache
+tmpclaude-*
+
+# Working Files (for editing before publishing)
+/drafts/
+/work-in-progress/
+
+# Large Files (use Git LFS if needed)
+*.psd
+*.ai
+*.sketch

@@ -1,0 +1,33 @@
+# GitHub Pages Configuration
+
+# Site settings
+title: "Free Maps for Teachers and Journalists"
+description: "High-quality, free map images for educational and journalistic use. All maps created with mapmaker.io"
+url: "" # Will be set by GitHub Pages
+baseurl: "" # Will be set by GitHub Pages
+
+# SEO settings
+lang: en
+author: "mapmaker.io"
+
+# Social sharing
+twitter:
+  card: summary_large_image
+
+# Collections and defaults
+exclude:
+  - .gitignore
+  - CONTRIBUTING.md
+  - claude.md
+  - CLAUDE.md
+  - tmpclaude-*
+  - drafts/
+  - work-in-progress/
+
+# Plugins (GitHub Pages compatible)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# GitHub Pages uses index.html directly
+# No Jekyll theme needed - custom HTML/CSS/JS

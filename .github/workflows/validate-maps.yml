@@ -1,0 +1,114 @@
+name: Validate Maps Metadata
+
+on:
+  pull_request:
+    paths:
+      - 'maps/**'
+      - 'thumbnails/**'
+      - 'maps-metadata.json'
+  push:
+    branches:
+      - main
+    paths:
+      - 'maps/**'
+      - 'thumbnails/**'
+      - 'maps-metadata.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate maps and metadata
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate JSON syntax
+        run: |
+          echo "Validating maps-metadata.json..."
+          python3 -m json.tool maps-metadata.json > /dev/null
+          echo "✓ JSON is valid"
+
+      - name: Check map files exist
+        run: |
+          echo "Checking that all maps in metadata have corresponding files..."
+          python3 << 'EOF'
+          import json
+          import os
+          import sys
+
+          with open('maps-metadata.json', 'r') as f:
+              data = json.load(f)
+
+          missing_files = []
+          missing_thumbnails = []
+
+          for map_entry in data.get('maps', []):
+              if map_entry.get('_comment'):
+                  continue  # Skip template examples
+
+              filename = map_entry.get('filename')
+              if filename:
+                  map_path = os.path.join('maps', filename)
+                  thumb_path = os.path.join('thumbnails', filename)
+
+                  if not os.path.exists(map_path):
+                      missing_files.append(map_path)
+
+                  if not os.path.exists(thumb_path):
+                      missing_thumbnails.append(thumb_path)
+
+          if missing_files:
+              print("❌ Missing map files:")
+              for f in missing_files:
+                  print(f"  - {f}")
+              sys.exit(1)
+
+          if missing_thumbnails:
+              print("⚠️  Warning: Missing thumbnails (non-blocking):")
+              for f in missing_thumbnails:
+                  print(f"  - {f}")
+
+          print("✓ All map files found")
+          EOF
+
+      - name: Validate metadata completeness
+        run: |
+          echo "Checking metadata completeness..."
+          python3 << 'EOF'
+          import json
+          import sys
+
+          required_fields = ['filename', 'title', 'description', 'category', 'tags', 'altText']
+
+          with open('maps-metadata.json', 'r') as f:
+              data = json.load(f)
+
+          incomplete_entries = []
+
+          for i, map_entry in enumerate(data.get('maps', [])):
+              if map_entry.get('_comment'):
+                  continue  # Skip template examples
+
+              missing = [field for field in required_fields if not map_entry.get(field)]
+              if missing:
+                  incomplete_entries.append({
+                      'index': i,
+                      'filename': map_entry.get('filename', 'unknown'),
+                      'missing': missing
+                  })
+
+          if incomplete_entries:
+              print("❌ Incomplete metadata entries:")
+              for entry in incomplete_entries:
+                  print(f"  - {entry['filename']}: missing {', '.join(entry['missing'])}")
+              sys.exit(1)
+
+          print("✓ All metadata entries are complete")
+          EOF
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ All validations passed!"
+          echo "Maps metadata is valid and all referenced files exist."
